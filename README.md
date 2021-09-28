@@ -21,8 +21,9 @@ Blogpost
 text: String !
 user: User !
 title: String !
-period: Date !
-image: String
+start vacation: Date!
+end vacation: Date!
+images: String
 
 (Comments:
 text:String !
@@ -31,11 +32,11 @@ post: Post !
 date: Date!)
 
 GET/Home page
-GET/Signup
-POST/Signup
-GET/Login
-POST/Login
-GET/Logout
+GET/Auth/Signup
+POST/Auth/Signup
+GET/Auth/Login
+POST/Auth/Login
+GET/Auth/Logout
 
 GET/Profile page
 GET/update profile
