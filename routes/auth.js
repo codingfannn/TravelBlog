@@ -1,12 +1,5 @@
 const router = require("express").Router();
 
-// ℹ️ Handles password encryption
-const bcrypt = require("bcryptjs");
-const mongoose = require("mongoose");
-
-// How many rounds should bcrypt run the salt (default [10 - 12 rounds])
-const saltRounds = 10;
-
 // Require the User model in order to interact with the database
 const User = require("../models/User.model");
 
@@ -14,36 +7,45 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+// ℹ️ Handles password encryption
+const bcrypt = require("bcryptjs");
+const mongoose = require("mongoose");
+
+// How many rounds should bcrypt run the salt (default [10 - 12 rounds])
+const saltRounds = 10;
+
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
 });
 
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { username, password } = req.body;
+  const { firstname, lastname, username, email, password } = req.body;
 
-  if (!username) {
-    return res
-      .status(400)
-      .render("auth/signup", { errorMessage: "Please provide your username." });
+  if (!firstname || !lastname || !username || !email) {
+    return res.status(400).render("auth/signup", {
+      errorMessage: "Hey man...Please fill out everything what we need!!.",
+      ...req.body,
+    });
   }
 
   if (password.length < 8) {
     return res.status(400).render("auth/signup", {
       errorMessage: "Your password needs to be at least 8 characters long.",
+      ...req.body,
     });
   }
 
   //   ! This use case is using a regular expression to control for special characters and min length
-  /*
+
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
 
   if (!regex.test(password)) {
     return res.status(400).render("signup", {
       errorMessage:
         "Password needs to have at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.",
+      ...req.body,
     });
   }
-  */
 
   // Search the database for a user with the username submitted in the form
   User.findOne({ username }).then((found) => {

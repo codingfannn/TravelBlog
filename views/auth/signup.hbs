@@ -1,10 +1,32 @@
+<h1>Signup Page</h1>
+
 <form action="/auth/signup" method="POST">
-   <label> Username
-      <input type="text" name="username">
+   <br />
+   <label> First Name
+      <input type="text" name="firstname" placeholder="Type your first name" value="{{firstname}}">
    </label>
+   <br />
+   <br />
+   <label> Last Name
+      <input type="text" name="lastname" placeholder="Type your last name" value="{{lastname}}">
+   </label>
+   <br />
+   <br />
+   <label> User Name
+      <input type="text" name="username" placeholder="Choose user name" value="{{username}}">
+   </label>
+   <br />
+   <br />
+   <label> E-mail
+      <input type="email" name="email" placeholder="Type your email" value="{{email}}">
+   </label>  
+   <br />
+   <br />
    <label> Password
-      <input type="password" name="password">
+      <input type="password" name="password" placeholder="Create your password">
    </label>
+   <br />
+   <br />
 
    <button type="submit">Submit</button>
 </form>

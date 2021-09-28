@@ -13,6 +13,8 @@ const blogpostSchema = new mongoose.Schema({
   image: {
     type: String,
   },
+  startVacation: Date,
+  endVacation: Date,
   timestamps: true,
 });
 
