@@ -29,3 +29,24 @@ text:String !
 user: User !
 post: Post !
 date: Date!)
+
+GET/Home page
+GET/Signup
+POST/Signup
+GET/Login
+POST/Login
+GET/Logout
+
+GET/Profile page
+GET/update profile
+POST/update profile
+GET/update password
+POST/update password
+GET/delete account
+
+GET/Blogpost page -when you signed in, can see all your blogposts
+GET/Create a post
+POST/Create post
+GET/Post update
+POST/Post update
+GET/Delete post
