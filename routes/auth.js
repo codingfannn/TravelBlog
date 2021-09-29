@@ -23,7 +23,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
 
   if (!firstname || !lastname || !username || !email) {
     return res.status(400).render("auth/signup", {
-      errorMessage: "Hey man...Please fill out everything what we need!!.",
+      errorMessage: "Hey...Please fill out everything what we need!!",
       ...req.body,
     });
   }
@@ -40,20 +40,21 @@ router.post("/signup", isLoggedOut, (req, res) => {
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
 
   if (!regex.test(password)) {
-    return res.status(400).render("signup", {
+    return res.status(400).render("auth/signup", {
       errorMessage:
         "Password needs to have at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.",
       ...req.body,
     });
   }
 
-  // Search the database for a user with the username submitted in the form
-  User.findOne({ username }).then((found) => {
+  // Search the database for a user with the email submitted in the form
+  User.findOne({ email }).then((foundUser) => {
     // If the user is found, send the message username is taken
-    if (found) {
-      return res
-        .status(400)
-        .render("auth.signup", { errorMessage: "Username already taken." });
+    if (foundUser) {
+      return res.status(400).render("auth/signup", {
+        errorMessage: "Email already taken.",
+        ...req.body,
+      });
     }
 
     // if user is not found, create a new user - start with hashing the password
@@ -63,25 +64,29 @@ router.post("/signup", isLoggedOut, (req, res) => {
       .then((hashedPassword) => {
         // Create a user and save it in the database
         return User.create({
+          firstname,
+          lastname,
           username,
+          email,
           password: hashedPassword,
         });
       })
-      .then((user) => {
+      .then((createUser) => {
         // Bind the user to the session object
-        req.session.user = user;
+        req.session.user = createUser;
         res.redirect("/");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
-          return res
-            .status(400)
-            .render("auth/signup", { errorMessage: error.message });
+          return res.status(400).render("auth/signup", {
+            errorMessage: error.message,
+            ...req.body,
+          });
         }
         if (error.code === 11000) {
           return res.status(400).render("auth/signup", {
             errorMessage:
-              "Username need to be unique. The username you chose is already in use.",
+              "Email need to be unique. The email you chose is already in use.",
           });
         }
         return res

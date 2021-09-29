@@ -32,7 +32,7 @@ post: Post !
 date: Date!)
 
 GET/Home page
-GET/Auth/Signup
+GET/Auth/Signup ✅
 POST/Auth/Signup
 GET/Auth/Login
 POST/Auth/Login
