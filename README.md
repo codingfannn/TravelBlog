@@ -33,10 +33,10 @@ date: Date!)
 
 GET/Home page
 GET/Auth/Signup ✅
-POST/Auth/Signup
-GET/Auth/Login
-POST/Auth/Login
-GET/Auth/Logout
+POST/Auth/Signup ✅
+GET/Auth/Login ✅
+POST/Auth/Login ✅
+GET/Auth/Logout ✅
 
 GET/Profile page
 GET/update profile
