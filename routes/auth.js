@@ -7,7 +7,7 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
-// ℹ️ Handles password encryption
+// :information_source: Handles password encryption
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 
