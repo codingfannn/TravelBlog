@@ -31,7 +31,7 @@ user: User !
 post: Post !
 date: Date!)
 
-GET/Home page
+GET/Home page ✅
 GET/Auth/Signup ✅
 POST/Auth/Signup ✅
 GET/Auth/Login ✅
