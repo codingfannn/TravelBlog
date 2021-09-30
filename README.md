@@ -31,12 +31,12 @@ user: User !
 post: Post !
 date: Date!)
 
-GET/Home page - done
-GET/Auth/Signup - done
-POST/Auth/Signup - done
-GET/Auth/Login - done
-POST/Auth/Login - done
-GET/Auth/Logout - done
+GET/Home page
+GET/Auth/Signup
+POST/Auth/Signup
+GET/Auth/Login
+POST/Auth/Login
+GET/Auth/Logout
 
 GET/Profile page
 GET/update profile
