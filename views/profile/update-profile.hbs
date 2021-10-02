@@ -1,7 +1,7 @@
-<h1 class="title">Signup Page</h1>
+<h1 class="title">Update Profile</h1>
 
-<form class="form-style" action="/auth/signup" method="POST">
-   <br />
+<form class="form-style" action="/profile/update-profile" method="POST">
+<br />
    <label> First Name
       <input type="text" name="firstname" placeholder="Type your first name" value="{{firstname}}">
    </label>
@@ -21,16 +21,7 @@
       <input type="email" name="email" placeholder="Type your email" value="{{email}}">
    </label>  
    <br />
-   <br />
-   <label> Password
-      <input type="password" name="password" placeholder="Create your password">
-   </label>
-   <br />
-   <br />
+   <button type="submit">Update your profile</button>
 
-   <button type="submit">Submit</button>
+
 </form>
-
-{{#if errorMessage}}
-  <p style="color:red">{{errorMessage}}</p>
-{{/if}}

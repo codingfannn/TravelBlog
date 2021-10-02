@@ -1,12 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;1,700&family=Roboto:wght@300;400;700&display=swap");
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+  font: "Roboto", sans-serif;
+  background-image: url(../images/bg-continents.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
 }
 
-a {
-  color: #00b7ff;
+.welcome-text-container {
+  margin-top: 670px;
+  margin-left: 800px;
+
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.25em;
+  letter-spacing: 0.15px;
+  color: #de7f11;
 }
 
-h1 {
-  color: 15px;
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bg-homepage {
+  height: 100vh;
+  position: fixed;
+}
+
+/*nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  width: 1700px;
+  font-family: "Roboto", sans-serif;
+}
+
+.nav-link {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  color: #edf6f9;
+}*/
+
+/*header img {
+  width: 100px;
+  height: 90px;
+  padding: 50px 50px 50px;
+}*/
+
+/*header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}*/
+
+nav {
+  width: 65%;
+  /*position: fixed;*/
+  left: 45%;
+}
+
+.navbar {
+  display: flex;
+}
+
+nav ul {
+  list-style: none;
+  font-size: 1.25em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  left: 60%;
+}
+
+.nav-link {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  color: #de7f11;
+}
+
+.title {
+  color: #de7f11;
+  padding-left: 40px;
+}
+
+.form-style {
+  color: #de7f11;
+  padding-left: 40px;
+}
+
+.profile-home-link {
+  font-weight: 400;
+  text-decoration: none;
+  padding-left: 40px;
+  font-size: 1.5em;
+  color: #de7f11;
 }

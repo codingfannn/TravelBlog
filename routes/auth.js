@@ -48,7 +48,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
   }
 
   // Search the database for a user with the email submitted in the form
-  User.findOne({ email }).then((foundUser) => {
+  User.findOne({ username }).then((foundUser) => {
     // If the user is found, send the message username is taken
     if (foundUser) {
       return res.status(400).render("auth/signup", {
