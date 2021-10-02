@@ -31,23 +31,23 @@ user: User !
 post: Post !
 date: Date!)
 
-GET/Home page
-GET/Auth/Signup
-POST/Auth/Signup
-GET/Auth/Login
-POST/Auth/Login
-GET/Auth/Logout
+GET/Home page ✅
+GET/Auth/Signup ✅
+POST/Auth/Signup ✅
+GET/Auth/Login ✅
+POST/Auth/Login ✅
+GET/Auth/Logout ✅
 
-GET/Profile page
-GET/update profile
-POST/update profile
+GET/Profile page ✅
+GET/update profile ✅
+POST/update profile ✅
 GET/update password
 POST/update password
 GET/delete account
 
 GET/Blogpost page -when you signed in, can see all your blogposts
-GET/Create a post
-POST/Create post
+GET/Create a post ✅
+POST/Create post ✅
 GET/Post update
 POST/Post update
 GET/Delete post
