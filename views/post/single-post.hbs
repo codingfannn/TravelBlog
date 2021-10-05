@@ -1,0 +1,13 @@
+<h1>{{post.title}}</h1>
+
+<h3>
+  by
+  {{#if post.author}}
+  {{post.author.username}}
+  {{else}}
+  {{/if}}
+</h3>
+
+{{post.text}}
+
+

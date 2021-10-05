@@ -17,4 +17,13 @@ router.post("/create", isLoggedIn, (req, res) => {
   );
 });
 
+router.get("/:id", (req, res) => {
+  Blogpost.findById(req.params.id)
+    .populate("author")
+    .then((thePost) => {
+      console.log("thePost:", thePost);
+      res.render("post/single-post", { post: thePost });
+    });
+});
+
 module.exports = router;
