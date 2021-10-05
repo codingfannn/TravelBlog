@@ -15,10 +15,12 @@ const mongoose = require("mongoose");
 const saltRounds = 10;
 
 router.get("/signup", isLoggedOut, (req, res) => {
+  console.log(req.session.user);
   res.render("auth/signup");
 });
 
 router.post("/signup", isLoggedOut, (req, res) => {
+  console.log(req.session.user);
   const { firstname, lastname, username, email, password } = req.body;
 
   if (!firstname || !lastname || !username || !email) {
@@ -98,10 +100,12 @@ router.post("/signup", isLoggedOut, (req, res) => {
 });
 
 router.get("/login", isLoggedOut, (req, res) => {
+  console.log(req.session.user);
   res.render("auth/login");
 });
 
 router.post("/login", isLoggedOut, (req, res, next) => {
+  console.log(req.session.user);
   const { username, password } = req.body;
 
   if (!username) {
@@ -150,6 +154,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 });
 
 router.get("/logout", isLoggedIn, (req, res) => {
+  console.log(req.session.user);
   req.session.destroy((err) => {
     if (err) {
       return res

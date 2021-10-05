@@ -108,3 +108,11 @@ nav ul {
   font-size: 1.5em;
   color: #de7f11;
 }
+
+.hi-dear-text {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1em;
+  letter-spacing: 0.15px;
+  color: #de7f11;
+  padding: 40px;
+}
