@@ -28,6 +28,13 @@ app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
 const index = require("./routes/index");
 app.use("/", index);
 
+app.use((req, res, next) => {
+  if (req.session.user) {
+    res.locals.user = req.session.user;
+  }
+  next();
+});
+
 const authRoutes = require("./routes/auth");
 const postsRoutes = require("./routes/post");
 app.use("/auth", authRoutes);
