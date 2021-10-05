@@ -1,14 +1,19 @@
 <div>
     <a class="profile-home-link" href="/profile/update-profile">Update your profile</a>
-    
-     
 </div>
+
 
 <div>
     <a class="profile-home-link" href="/profile/update-password">Update your password</a>
 </div>
 
 <div>
-    <a class="profile-home-link"  href="/posts/create">Create a post</a>
-    
+    <a class="profile-home-link" href="/post/create">Create a post</a>
 </div>
+
+<hr />
+{{#each allPosts}}
+  <a href="/post/{{this._id}}">{{this.title}}</a>
+  <br />
+{{/each}}
+    
