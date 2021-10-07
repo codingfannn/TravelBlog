@@ -3,14 +3,46 @@
 
 body {
   margin: 0 auto;
-  font: "Roboto", sans-serif;
-  background-image: url(../images/bg-continents.jpeg);
+  font-family: "Roboto Mono", monospace;
+  background-image: url(../images/pexels-jess-loiterton-4321802.jpg);
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   width: 100%;
 }
 
-.welcome-text-container {
+div.welcome-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 150px;
+  margin-bottom: 0;
+}
+
+div.welcome-text-container h1 {
+  text-align: center;
+  display: flex;
+  width: 800px;
+  color: #a98467;
+  font-size: 4.5em;
+}
+
+div.second-welcome-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.second-welcome-text-container h2 {
+  color: #80ffdb;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 0;
+}
+
+/*.welcome-text-container {
   margin-top: 670px;
   margin-left: 800px;
 
@@ -24,12 +56,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-}
+}*/
 
-.bg-homepage {
+/*.bg-homepage {
   height: 100vh;
-  position: fixed;
-}
+  /*position: fixed;*/
 
 /*nav {
   display: flex;
@@ -64,9 +95,9 @@ nav ul {
   align-items: center;
 }*/
 
-nav {
+/*nav {
   width: 65%;
-  /*position: fixed;*/
+  position: fixed;
   left: 45%;
 }
 
@@ -115,4 +146,188 @@ nav ul {
   letter-spacing: 0.15px;
   color: #de7f11;
   padding: 40px;
+}*/
+
+.header-container {
+  width: 100%;
+  /*min-height: 100vh;*/
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hello {
+  text-align: left;
+  width: 300px;
+  margin: 0;
+  color: #a98467;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+nav {
+  flex: 1;
+  text-align: right;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #a98467;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+nav ul li a:hover {
+  color: #80ffdb;
+  text-decoration: overline #80ffdb;
+}
+
+.globe-logo {
+  width: 180px;
+  cursor: pointer;
+  margin: 10px 20px;
+  color: #a98467;
+}
+
+/*---------
+Login
+----------*/
+.login-box {
+  width: 280px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #a98467;
+}
+
+.login-box h1 {
+  float: left;
+  font-size: 40px;
+  border-bottom: 3px solid #a98467;
+  margin-bottom: 50px;
+  padding: 4 px 0;
+}
+
+.textbox {
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid #a98467;
+}
+
+.textbox input {
+  border: none;
+  outline: none;
+  background: none;
+  color: #80ffdb;
+  font-size: 20px;
+  font-weight: 700;
+  width: 180px;
+  float: left;
+  margin: 0 10px;
+}
+
+.textbox input::placeholder {
+  font-size: 20px;
+  background: none;
+  color: whitesmoke;
+  font-weight: 700;
+}
+
+.login-btn {
+  width: 100%;
+  background: none;
+  border: 2px solid #a98467;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.login-btn:hover {
+  background: #80ffdb;
+  border: none;
+  color: #a98467;
+}
+
+/*---------
+Signup
+----------*/
+
+.signup-box {
+  width: 280px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #a98467;
+}
+
+.signup-box h1 {
+  float: left;
+  font-size: 40px;
+  border-bottom: 3px solid #a98467;
+  margin-bottom: 50px;
+  padding: 4 px 0;
+}
+
+.textbox {
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid #a98467;
+}
+
+.textbox input {
+  border: none;
+  outline: none;
+  background: none;
+  color: #80ffdb;
+  font-size: 20px;
+  font-weight: 700;
+  width: 220px;
+  float: left;
+  margin: 0 10px;
+}
+
+.textbox input::placeholder {
+  font-size: 20px;
+  background: none;
+  color: whitesmoke;
+  font-weight: 700;
+}
+
+.signup-btn {
+  width: 100%;
+  background: none;
+  border: 2px solid #a98467;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.signup-btn:hover {
+  background: #80ffdb;
+  border: none;
+  color: #a98467;
 }
