@@ -48,6 +48,6 @@ GET/delete account ✅
 GET/Blogpost page -when you signed in, can see all your blogposts
 GET/Create a post ✅
 POST/Create post ✅
-GET/Post update
-POST/Post update
+GET/Post update ✅
+POST/Post update ✅
 GET/Delete post
