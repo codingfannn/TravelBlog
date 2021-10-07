@@ -1,13 +1,20 @@
 <h1>{{post.title}}</h1>
 
-<h3>
+<h5>
   by
   {{#if post.author}}
   {{post.author.username}}
   {{else}}
   {{/if}}
-</h3>
+</h5>
 
-{{post.text}}
+{{post.image}}
 
-
+<h3>{{post.text}}</h3>
+<br />
+<br />
+{{#if isAuthor}}
+  <div>
+    <a href="/post/{{post._id}}/edit">Edit the post</a>
+  </div>
+{{/if}}
