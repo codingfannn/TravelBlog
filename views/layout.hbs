@@ -11,33 +11,38 @@
    </head>
 
    <body>
-      <header>
-  
-    <nav class="navbar">
+      
+  <div class="header-container">
+     <div class="navbar">
+       <img class="globe-logo"src="./images/palmtree.png" alt="">
+         
        
-       <ul>
-         <li><a class="nav-link" href="/">Home</a></li>
-         {{#if user}}
-         
-          <li><a class="nav-link" href="/auth/logout">Log Out</a></li>
-          <li><a class="nav-link"  href="/profile">Profile Page</a></li>
-          
-         
-        
-            <p>Hello {{user.username}}</p>
-
-         {{else}}
+         <nav>
+            <ul>
+                  <li><a class="nav-link" href="/">Home</a></li>
+                  {{#if user}}
+               
+                  <li><a class="nav-link" href="/auth/logout">Log Out</a></li>
+                  <li><a class="nav-link"  href="/profile">Profile Page</a></li>
+               
+               
             
-           
-           
-            <li><a class="nav-link" href="/auth/signup">Sign Up</a></li>
-            <li><a class="nav-link" href="/auth/login">Log In</a></li>
-        {{/if}}
-     </ul>
-      </nav>
+                  <p class="hello">Hello {{user.username}}</p>
+
+                     {{else}}
+                  
+               
+               
+                  <li><a class="nav-link" href="/auth/signup">Sign Up</a></li>
+                  <li><a class="nav-link" href="/auth/login">Log In</a></li>
+                  {{/if}}
+               </ul>
+         </nav>
+    </div>  
+   </div>
         
      
-  </header>
+  
 
      
 

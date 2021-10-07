@@ -90,4 +90,19 @@ router.post("/update-password", isLoggedIn, (req, res) => {
     });
   });
 });
+
+router.get("/delete-account", isLoggedIn, (req, res) => {
+  const userId = req.session.user._id;
+
+  User.findByIdAndDelete(userId).then(() => {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error("err: ", err);
+      }
+
+      res.redirect("/");
+    });
+  });
+});
+
 module.exports = router;

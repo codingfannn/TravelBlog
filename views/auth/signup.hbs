@@ -1,34 +1,33 @@
-<h1 class="title">Signup Page</h1>
+
 
 <form class="form-style" action="/auth/signup" method="POST">
-   <br />
-   <label> First Name
-      <input type="text" name="firstname" placeholder="Type your first name" value="{{firstname}}">
-   </label>
-   <br />
-   <br />
-   <label> Last Name
-      <input type="text" name="lastname" placeholder="Type your last name" value="{{lastname}}">
-   </label>
-   <br />
-   <br />
-   <label> User Name
-      <input type="text" name="username" placeholder="Choose user name" value="{{username}}">
-   </label>
-   <br />
-   <br />
-   <label> E-mail
-      <input type="email" name="email" placeholder="Type your email" value="{{email}}">
-   </label>  
-   <br />
-   <br />
-   <label> Password
-      <input type="password" name="password" placeholder="Create your password">
-   </label>
-   <br />
-   <br />
+   <div class="signup-box">
+      <h1>Signup</h1>
 
-   <button type="submit">Submit</button>
+      <div class="textbox">
+         <input type="text" name="firstname" placeholder="Type your first name" value="{{firstname}}">
+      </div>
+
+      <div class="textbox">
+      <input type="text" name="lastname" placeholder="Type your last name" value="{{lastname}}">
+      </div>
+
+      <div class="textbox">
+      <input type="text" name="username" placeholder="Choose a user name" value="{{username}}">
+      </div>
+
+      <div class="textbox">
+      <input type="email" name="email" placeholder="Type your email" value="{{email}}">
+      </div>
+
+      <div class="textbox">
+      <input type="password" name="password" placeholder="Create your password">
+      </div>
+
+
+
+      <button class="signup-btn" type="submit">Submit</button>
+   </div>
 </form>
 
 {{#if errorMessage}}
