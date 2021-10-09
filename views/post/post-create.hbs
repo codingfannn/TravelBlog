@@ -1,6 +1,6 @@
 <h1 class="title">Create Your Post</h1>
 
-<form class="form-style" action="/post/create" method="POST">  
+<form class="form-style" action="/post/create" method="POST" enctype="multipart/form-data">  
   <br />
   <label>Start vacation
     <input
@@ -19,8 +19,8 @@
   </label>
   <br />
   <br />  
-  <label>Image
-    <input type="image" name="image" placeholder="Image" />
+  <label>Image    
+    <input type="file" name="image"/>    
   </label>
   <br />
   <br />

@@ -2,12 +2,15 @@ const router = require("express").Router();
 const isLoggedIn = require("../middleware/isLoggedIn");
 const { rawListeners } = require("../models/Blogpost.model");
 const Blogpost = require("../models/Blogpost.model");
+const upload = require("../middleware/cloudinary");
 
 router.get("/create", isLoggedIn, (req, res) => {
   res.render("post/post-create");
 });
 
-router.post("/create", isLoggedIn, (req, res) => {
+router.post("/create", isLoggedIn, upload.single("image"), (req, res) => {
+  console.log(req.file);
+  console.log("req.body:", req.body);
   const { title, text, startVacation, endVacation, timestamps } = req.body;
 
   Blogpost.create({
@@ -17,6 +20,7 @@ router.post("/create", isLoggedIn, (req, res) => {
     endVacation,
     timestamps,
     author: req.session.user._id,
+    image: req.file.path,
   }).then((createdPost) => {
     console.log(createdPost);
     res.redirect("/post/all-posts");
@@ -55,7 +59,7 @@ router.get("/:id/edit", isLoggedIn, (req, res) => {
   });
 });
 
-router.post("/:id/edit", isLoggedIn, (req, res) => {
+router.post("/:id/edit", isLoggedIn, upload.single("image"), (req, res) => {
   const { startVacation, endVacation, title, image, text } = req.body;
   //Check if the post is exist
   Blogpost.findById(req.params.id).then((singlePost) => {
@@ -73,7 +77,7 @@ router.post("/:id/edit", isLoggedIn, (req, res) => {
       startVacation,
       endVacation,
       title,
-      image,
+      image: req.file.path,
       text,
     }).then(() => {
       res.redirect(`/post/${singlePost._id}`);
