@@ -13,8 +13,8 @@ const blogpostSchema = new mongoose.Schema(
     image: {
       type: String,
     },
-    startVacation: Date,
-    endVacation: Date,
+    startVacation: Date.UTC(),
+    endVacation: Date.UTC(),
   },
   { timestamps: true }
 );

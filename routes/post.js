@@ -10,12 +10,23 @@ router.get("/create", isLoggedIn, (req, res) => {
 router.post("/create", isLoggedIn, (req, res) => {
   const { title, text, startVacation, endVacation, timestamps } = req.body;
 
-  Blogpost.create({ text, title, author: req.session.user._id }).then(
-    (createdPost) => {
-      console.log(createdPost);
-      res.redirect("/profile");
-    }
-  );
+  Blogpost.create({
+    text,
+    title,
+    startVacation,
+    endVacation,
+    timestamps,
+    author: req.session.user._id,
+  }).then((createdPost) => {
+    console.log(createdPost);
+    res.redirect("/post/all-posts");
+  });
+});
+
+router.get("/all-posts", (req, res) => {
+  Blogpost.find().then((allPosts) => {
+    res.render("post/all-posts", { allPosts });
+  });
 });
 
 router.get("/:id", (req, res) => {
@@ -68,6 +79,16 @@ router.post("/:id/edit", isLoggedIn, (req, res) => {
       res.redirect(`/post/${singlePost._id}`);
     });
   });
+});
+
+router.post("/:id/delete", isLoggedIn, (req, res) => {
+  Blogpost.findByIdAndDelete(req.params.id)
+    .then((deletePost) => {
+      res.redirect("/post/all-posts");
+    })
+    .catch((error) => {
+      console.log("arr!!");
+    });
 });
 
 module.exports = router;

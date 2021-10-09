@@ -7,14 +7,21 @@
   {{else}}
   {{/if}}
 </h5>
+<h5>from {{post.startVacation}} to {{post.endVacation}}</h5>
 
 {{post.image}}
 
 <h3>{{post.text}}</h3>
 <br />
 <br />
+<h6>Post on {{post.createdAt}}</h6>
 {{#if isAuthor}}
   <div>
     <a href="/post/{{post._id}}/edit">Edit the post</a>
   </div>
+  <form action="/post/{{post.id}}/delete" method="POST">
+  <div>
+    <button type="submit">Delete</button>
+  </div>
+  </form>
 {{/if}}

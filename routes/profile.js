@@ -12,10 +12,9 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 const bcrypt = require("bcryptjs");
 
 router.get("/", isLoggedIn, (req, res) => {
-  Blogpost.find({ author: req.session.user._id }).then((allPosts) => {
-    res.render("profile/home", { allPosts });
-  });
+  res.render("profile/home");
 });
+
 /*router.get("/", isLoggedIn, (req, res) => {
   res.render("profile/home", { user: req.session.user });
 });*/

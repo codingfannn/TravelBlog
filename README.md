@@ -50,4 +50,4 @@ GET/Create a post ✅
 POST/Create post ✅
 GET/Post update ✅
 POST/Post update ✅
-GET/Delete post
+GET/Delete post ✅
