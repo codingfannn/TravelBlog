@@ -1,27 +1,28 @@
-<h1 class="title">Update Profile</h1>
+
 
 <form class="form-style" action="/profile/update-profile" method="POST">
-<br />
-   <label> First Name
-      <input type="text" name="firstname" placeholder="Type your first name" value="{{firstname}}">
-   </label>
-   <br />
-   <br />
-   <label> Last Name
-      <input type="text" name="lastname" placeholder="Type your last name" value="{{lastname}}">
-   </label>
-   <br />
-   <br />
-   <label> User Name
-      <input type="text" name="username" placeholder="Choose user name" value="{{username}}">
-   </label>
-   <br />
-   <br />
-   <label> E-mail
-      <input type="email" name="email" placeholder="Type your email" value="{{email}}">
-   </label>  
-   <br />
-   <button type="submit">Update your profile</button>
+      
+   <div class="update-profile-box">      
+      <h1>Update Profile</h1>
 
+      <div class="update-profile-textbox">
+      <input type="text" name="firstname" placeholder="Update first name" value="{{firstname}}">
+      </div>
+   
+      <div class="update-profile-textbox">
+      <input type="text" name="lastname" placeholder="Update last name" value="{{lastname}}">
+      </div>
+
+      <div class="update-profile-textbox">
+      <input type="text" name="username" placeholder="Update user name" value="{{username}}">
+      </div>
+
+      <div class="update-profile-textbox">
+      <input type="email" name="email" placeholder="Update email" value="{{email}}">
+      </div>
+
+
+       <button class="update-profile-btn" type="submit">Update your profile</button>
+   </div>
 
 </form>
