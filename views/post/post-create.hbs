@@ -1,33 +1,39 @@
-<h1 class="title">Create Your Post</h1>
 
 <form class="form-style" action="/post/create" method="POST" enctype="multipart/form-data">  
-  <br />
-  <label>Start vacation
-    <input
-      type="date" name="startVacation" placeholder="start of date" />
+  
+ <h1>Create your post</h1>
+  
+  <div class="createpost-textbox">
+  <label> Start vacation
+    <input type="date" name="startVacation" placeholder="start of date" />
   </label>
-  <br />
-  <br />
+  </div>
+
+  <div class="createpost-textbox">
   <label>End vacation
     <input
       type="date" name="endVacation" placeholder="end of date" />
   </label>
-  <br />
-  <br />
+  </div>
+ 
+   <div class="createpost-textbox">
   <label>Title
     <input type="text" name="title" placeholder="What's News?" size="30" />
   </label>
-  <br />
-  <br />  
-  <label>Image    
-    <input type="file" name="image"/>    
+  </div>
+
+  <div class="createpost-textbox">
+  <label>Image
+    <input type="file" name="image"  />
   </label>
-  <br />
-  <br />
+  </div>
+  
+   <div class="createpost-textbox">
   <label>Text of your post:</label>     
-  <br /> 
-  <textarea id="text" name="text" placeholder="Shraing your expeience!" cols="50" rows="20" ></textarea>
-  <br />
-  <br />
-  <button type="submit">Create</button>
+  <textarea id="text" name="text" placeholder="Shraing your expeience!" cols="50" rows="10" ></textarea>
+ </div>
+
+
+  <button class="createpost-btn" type="submit">Create</button>
+  </div>
 </form>
