@@ -13,6 +13,12 @@ router.post("/create", isLoggedIn, upload.single("image"), (req, res) => {
   console.log("req.body:", req.body);
   const { title, text, startVacation, endVacation, timestamps } = req.body;
 
+  let image;
+
+  if (req.file) {
+    image = req.file.path;
+  }
+
   Blogpost.create({
     text,
     title,
@@ -20,7 +26,7 @@ router.post("/create", isLoggedIn, upload.single("image"), (req, res) => {
     endVacation,
     timestamps,
     author: req.session.user._id,
-    image: req.file.path,
+    image,
   }).then((createdPost) => {
     console.log(createdPost);
     res.redirect("/post/all-posts");
@@ -73,13 +79,19 @@ router.post("/:id/edit", isLoggedIn, upload.single("image"), (req, res) => {
       return res.redirect(`/post/${singlePost._id}`);
     }
 
-    Blogpost.findByIdAndUpdate(singlePost._id, {
+    // if the user does not send an IMAGE, dont try to update the image property
+    const editObj = {
       startVacation,
       endVacation,
       title,
-      image: req.file.path,
       text,
-    }).then(() => {
+    };
+
+    if (req.file) {
+      editObj.image = req.file.path;
+    }
+
+    Blogpost.findByIdAndUpdate(singlePost._id, editObj).then(() => {
       res.redirect(`/post/${singlePost._id}`);
     });
   });
