@@ -1,27 +1,41 @@
-<h1>{{post.title}}</h1>
+<div class="flex-container">
+  <div class="flex-item">
 
-<h5>
-  by
-  {{#if post.author}}
-  {{post.author.username}}
-  {{else}}
+    <h1>{{post.title}}</h1>
+
+    <h5>
+      by
+      {{#if post.author}}
+      {{post.author.username}}
+      {{else}}
+      {{/if}}
+    </h5>
+    <h5>from {{post.startVacation}} to {{post.endVacation}}</h5>
+
+    <img class="post-image"src="{{post.image}}" alt="" width="400" height="" />
+  </div>
+
+
+  <div class="flex-item">
+  <h3>{{post.text}}</h3>
+  <br />
+  <br />
+  <h6>Post on {{post.createdAt}}</h6>
+  </div>
+
+  
+</div>
+
+<div class="postbuttons-flex-container">
+
+ {{#if isAuthor}}
+    <div>
+      <a class="edit-singlepost-btn" href="/post/{{post._id}}/edit">Edit the post</a>
+    </div>
+    <form action="/post/{{post.id}}/delete" method="POST">
+    <div>
+      <button class="delete-singlepost-btn" type="submit">Delete the post</button>
+    </div>
+    </form>
   {{/if}}
-</h5>
-<h5>from {{post.startVacation}} to {{post.endVacation}}</h5>
-
-<img src="{{post.image}}" alt="" width="400" height="" />
-
-<h3>{{post.text}}</h3>
-<br />
-<br />
-<h6>Post on {{post.createdAt}}</h6>
-{{#if isAuthor}}
-  <div>
-    <a href="/post/{{post._id}}/edit">Edit the post</a>
   </div>
-  <form action="/post/{{post.id}}/delete" method="POST">
-  <div>
-    <button type="submit">Delete</button>
-  </div>
-  </form>
-{{/if}}

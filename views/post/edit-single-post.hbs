@@ -1,34 +1,46 @@
-<h1 class="title">Edit Your Post</h1>
-
 <form class="form-style" action="/post/{{post._id}}/edit" method="POST" enctype="multipart/form-data">
-  <br />
-  <label>Start vacation
-    <input type="date" name="startVacation" value="{{post.startVacation}}" />
-  </label>
-  <br />
-  <br />
-  <label>End vacation
-    <input type="date" name="endVacation" value="{{post.endVacation}}" />
-  </label>
-  <br />
-  <br />
-  <label>Title
-    <input type="text" name="title" value="{{post.title}}" />
-  </label>
-  <br />
-  <br />
-  <label>Image
-    <input type="file" name="image" />
-  </label>
-  <br />
-  <img src="{{post.image}}" alt="" width="400" height="" />
-  <br />
-  <br />
-  <label>Text of your post:
-  <br /> 
-  <textarea id="text" name="text" cols="50" rows="20" >{{post.text}}</textarea>    
-  </label>
-  <br />
-  <br />
-  <button type="submit">Edit</button>
+  
+  <div class="editpost-box">
+    
+    <div>
+    <h1>Edit your post</h1>
+
+    <div class="editpost-textbox">
+    <label>Start vacation
+      <input type="date" name="startVacation" value="{{post.startVacation}}" />
+    </label>
+    </div>
+    
+    <div class="editpost-textbox">
+    <label>End vacation
+      <input type="date" name="endVacation" value="{{post.endVacation}}" />
+    </label>
+    </div>
+
+    <div class="editpost-textbox">
+    <label>Title
+      <input type="text" name="title" value="{{post.title}}" />
+    </label>
+    </div>
+    </div>
+
+    <div>
+    <div class="editpost-textbox">
+    <label>Image
+      <input type="file" name="image" />
+    </label>
+    </div>
+
+  
+    <div class="editpost-textbox">
+    <label>Text of your post:
+    <textarea id="text" name="text" cols="50" rows="10" >{{post.text}}</textarea>    
+    </label>
+    </div>
+    </div>
+
+    <button class="editpost-btn" type="submit">Edit</button>
+    
+  
+  </div>
 </form>

@@ -1,10 +1,14 @@
-<div>
-  {{#each allPosts}}
-  <a href="/post/{{this._id}}">{{this.title}}</a>
-  <br />  
-  {{/each}}
+<div id="allpost-link" class="allpost-container">
+
+  <div>
+    {{#each allPosts}}
+    <a class="allpost-box"href="/post/{{this._id}}">{{this.title}}</a>
+    <br />  
+    {{/each}}
+  </div>
+
 </div>
 
- <h1>{{post.title}}</h1>
+
 
 

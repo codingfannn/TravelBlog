@@ -17,7 +17,6 @@ div.welcome-text-container {
   justify-content: center;
   align-items: center;
 
-  margin-top: 150px;
   margin-bottom: 0;
 }
 
@@ -29,129 +28,8 @@ div.welcome-text-container h1 {
   font-size: 4.5em;
 }
 
-/*div.second-welcome-text-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-div.second-welcome-text-container h2 {
-  color: #80ffdb;
-  font-size: 2.5em;
-  font-weight: 700;
-  margin: 0;
-}*/
-
-/*.welcome-text-container {
-  margin-top: 670px;
-  margin-left: 800px;
-
-  font-family: "Roboto Mono", monospace;
-  font-size: 1.25em;
-  letter-spacing: 0.15px;
-  color: #de7f11;
-}
-
-.welcome-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}*/
-
-/*.bg-homepage {
-  height: 100vh;
-  /*position: fixed;*/
-
-/*nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-nav ul {
-  display: flex;
-  list-style-type: none;
-  justify-content: space-around;
-  width: 1700px;
-  font-family: "Roboto", sans-serif;
-}
-
-.nav-link {
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 2em;
-  color: #edf6f9;
-}*/
-
-/*header img {
-  width: 100px;
-  height: 90px;
-  padding: 50px 50px 50px;
-}*/
-
-/*header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}*/
-
-/*nav {
-  width: 65%;
-  position: fixed;
-  left: 45%;
-}
-
-.navbar {
-  display: flex;
-}
-
-nav ul {
-  list-style: none;
-  font-size: 1.25em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  left: 60%;
-}
-
-.nav-link {
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 2em;
-  color: #de7f11;
-}
-
-.title {
-  color: #de7f11;
-  padding-left: 40px;
-}
-
-.form-style {
-  color: #de7f11;
-  padding-left: 40px;
-}
-
-.profile-home-link {
-  font-weight: 400;
-  text-decoration: none;
-  padding-left: 40px;
-  font-size: 1.5em;
-  color: #de7f11;
-}
-
-.hi-dear-text {
-  font-family: "Roboto Mono", monospace;
-  font-size: 1em;
-  letter-spacing: 0.15px;
-  color: #de7f11;
-  padding: 40px;
-}*/
-
 .header-container {
   width: 100%;
-  /*min-height: 100vh;*/
-
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -373,7 +251,7 @@ Update password, update profile
   color: #80ffdb;
   font-size: 20px;
   font-weight: 700;
-  width: 180px;
+  width: 280px;
   float: left;
   margin: 0 10px;
 }
@@ -406,10 +284,11 @@ Update password, update profile
 }
 
 /*----------------
-Create post
+Create post, edit post
 ------------------*/
 
-.createpost-box {
+.createpost-box,
+.editpost-box {
   width: 340px;
   position: absolute;
   top: 45%;
@@ -418,7 +297,8 @@ Create post
   color: #a98467;
 }
 
-.createpost-box h1 {
+.createpost-box h1,
+.editpost-box h1 {
   float: left;
   font-size: 25px;
   border-bottom: 3px solid #a98467;
@@ -426,7 +306,8 @@ Create post
   padding: 4 px 0;
 }
 
-.createpost-textbox {
+.createpost-textbox,
+.editpost-textbox {
   width: 100%;
   overflow: hidden;
   font-size: 20px;
@@ -435,7 +316,8 @@ Create post
   border-bottom: 1px solid #a98467;
 }
 
-.createpost-textbox input {
+.createpost-textbox input,
+.editpost-textbox input {
   border: none;
   outline: none;
   background: none;
@@ -447,25 +329,29 @@ Create post
   margin: 0 10px;
 }
 
-.createpost-textbox input::placeholder {
+.createpost-textbox input::placeholder,
+.editpost-textbox input::placeholder {
   font-size: 20px;
   background: none;
   color: whitesmoke;
   font-weight: 700;
 }
 
-.createpost-textbox input {
+.createpost-textbox input,
+.editpost-textbox input {
   font-size: 20px;
   background: none;
   color: whitesmoke;
   font-weight: 700;
 }
 
-.createpost-textbox label {
+.createpost-textbox label,
+.editpost-textbox label {
   font-weight: 700;
 }
 
-.createpost-textbox textarea {
+.createpost-textbox textarea,
+.editpost-textbox textarea {
   border: 1px solid #a98467;
   background: #e2fdff;
   color: #a98467;
@@ -475,17 +361,19 @@ Create post
   float: left;
   margin: 10px 10px;
   box-shadow: 10px 5px 5px #a98467;
-  border-radius: 15px 50px 30px;
+  border-radius: 15px;
 }
 
-.createpost-textbox textarea::placeholder {
+.createpost-textbox textarea::placeholder,
+.editpost-textbox textarea::placeholder {
   font-size: 20px;
   background: none;
   color: #a98467;
   font-weight: 400;
 }
 
-.createpost-btn {
+.createpost-btn,
+.editpost-btn {
   width: 100%;
   background: #eae0d7;
   border: 2px solid #a98467;
@@ -496,26 +384,33 @@ Create post
   font-weight: 700;
 }
 
-.createpost-btn:hover {
+.createpost-btn:hover,
+.editpost-btn:hover {
   background: #80ffdb;
   border: none;
   color: #a98467;
 }
 
-.profile-home-container {
+/*----------------------
+Profile section
+-------------------------*/
+.profile-home-container,
+.allpost-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#profile-link > div {
+#profile-link > div,
+#allpost-link > div {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.profile-home-box {
+.profile-home-box,
+.allpost-box {
   font-size: 1.7em;
   text-align: center;
 
@@ -539,4 +434,57 @@ Create post
   font-size: 2.5em;
   color: #64dfdf;
   font-weight: 700;
+}
+
+.flex-container {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-item {
+  margin-left: 7%;
+  margin-right: 7%;
+
+  text-align: justify;
+  color: #7f5539;
+}
+
+.post-image {
+  border-radius: 50px;
+}
+
+.postbuttons-flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 110px;
+}
+
+.edit-singlepost-btn {
+  text-decoration: none;
+}
+.delete-singlepost-btn {
+  margin-top: 50px;
+}
+
+.edit-singlepost-btn,
+.delete-singlepost-btn {
+  width: 100%;
+  background: #eae0d7;
+  border: 2px solid #a98467;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.edit-singlepost-btn:hover,
+.delete-singlepost-btn:hover {
+  background: #80ffdb;
+  border: none;
+  color: #a98467;
 }
