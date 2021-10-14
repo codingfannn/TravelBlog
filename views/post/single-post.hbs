@@ -1,16 +1,18 @@
+<h1 class="single-post-title">{{post.title}}</h1>
+<div class="container">
+
 <div class="flex-container">
   <div class="flex-item">
+   
 
-    <h1>{{post.title}}</h1>
-
-    <h5>
+    <h5 class="byauthor">
       by
       {{#if post.author}}
       {{post.author.username}}
       {{else}}
       {{/if}}
     </h5>
-    <h5>from {{post.startVacation}} to {{post.endVacation}}</h5>
+    <h5 class="vacation-date">from {{post.startVacation}} to {{post.endVacation}}</h5>
 
     <img class="post-image"src="{{post.image}}" alt="" width="400" height="" />
   </div>
@@ -18,12 +20,11 @@
 
   <div class="flex-item">
   <h3>{{post.text}}</h3>
-  <br />
-  <br />
-  <h6>Post on {{post.createdAt}}</h6>
+  <h6 class="post-created">Post on {{post.createdAt}}</h6>
   </div>
 
   
+</div>
 </div>
 
 <div class="postbuttons-flex-container">
@@ -32,6 +33,7 @@
     <div>
       <a class="edit-singlepost-btn" href="/post/{{post._id}}/edit">Edit the post</a>
     </div>
+    
     <form action="/post/{{post.id}}/delete" method="POST">
     <div>
       <button class="delete-singlepost-btn" type="submit">Delete the post</button>

@@ -429,11 +429,29 @@ Profile section
   opacity: 0.7;
 }
 
-.profile-home-box:hover {
+.allpost-box {
+  width: 60%;
+}
+.profile-home-box:hover,
+.allpost-box:hover {
   border: none;
   font-size: 2.5em;
   color: #64dfdf;
   font-weight: 700;
+}
+
+/*-------------
+Single post
+-----------------*/
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #eae0d7;
+  border-radius: 25px;
+  margin-bottom: 25px;
+  opacity: 0.9;
 }
 
 .flex-container {
@@ -444,9 +462,9 @@ Profile section
 }
 
 .flex-item {
-  margin-left: 7%;
-  margin-right: 7%;
-
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100%;
   text-align: justify;
   color: #7f5539;
 }
@@ -457,17 +475,19 @@ Profile section
 
 .postbuttons-flex-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin-top: 110px;
 }
 
 .edit-singlepost-btn {
   text-decoration: none;
+  margin-top: 50px;
+  border-radius: 25px;
 }
 .delete-singlepost-btn {
-  margin-top: 50px;
+  margin-top: 25px;
+  border-radius: 25px;
 }
 
 .edit-singlepost-btn,
@@ -487,4 +507,20 @@ Profile section
   background: #80ffdb;
   border: none;
   color: #a98467;
+}
+
+.single-post-title {
+  display: flex;
+  justify-content: center;
+  color: #a98467;
+  font-size: 3em;
+  margin-bottom: 0px;
+}
+
+.byauthor {
+  margin: 0;
+}
+
+.vacation-date {
+  margin: 10px 0;
 }
